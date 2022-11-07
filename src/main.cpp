@@ -49,7 +49,7 @@ void	inside_cpp(std::ofstream &cpp_file, char *class_name)
 	txt = "#include \"../header/";
 	txt = txt + classe +  ".hpp\"\n\n" + classe + "::" + classe + "()\n{\n\tstd::cout << \"Default constructor call for " + classe + "\" << std::endl;\n}\n\n" + classe + "::" + classe + "(" + classe;
 	txt = txt + " const &src)\n{\n\t*this = src;\n\tstd::cout << \"Copy constructor call for " + classe + "\" << std::endl;\n}\n\n";	
-	txt = txt + classe + "::~" + classe + "()\n{\n\tstd::cout << \"Default destuctor call for " + classe + "\" << std::endl;\n}\n\n" + classe + "\t&" + classe + "::operator=(" + classe + " const &src)\n{\n\treturn *this;\n\tstd::cout << \"Default assignement call for " + classe + "\" << std::endl;\n}";
+	txt = txt + classe + "::~" + classe + "()\n{\n\tstd::cout << \"Default destuctor call for " + classe + "\" << std::endl;\n}\n\n" + classe + "\t&" + classe + "::operator=(" + classe + " const &src)\n{\n\tstd::cout << \"Default assignement call for " + classe + "\" << std::endl;\treturn *this;\n\n}";
 	cpp_file << txt;
 }
 
